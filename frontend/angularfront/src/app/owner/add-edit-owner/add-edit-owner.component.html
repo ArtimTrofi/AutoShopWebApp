@@ -1,0 +1,43 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+<div class="form-group row" style="width: 60%">
+
+  <label class="col-sm-2 col-form-label">Owner Name</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="OwnerName"
+    placeholder="Enter Owner Name">
+
+  </div>
+
+  <label class="col-sm-2 col-form-label">Car</label>
+  <div class="col-sm-10">
+    <select class="form-control" [(ngModel)]="Car">
+      <option>--Select--</option>
+      <option *ngFor="let carName of CarsList">
+        {{carName.CarName}}
+      </option>
+    </select>
+  </div>
+
+  <label class="col-sm-2 col-form-label">Date of Purchase</label>
+  <div class="col-sm-10">
+    <input type="date" [(ngModel)]="DateOfPurchase">
+
+</div>
+
+<div class="ml-3 bd-highlight">
+
+
+</div>
+
+
+<button (click)="addOwner()" *ngIf="own.OwnerId==0" class="btn btn-primary">
+  Add
+
+</button>
+
+<button (click)="UpdateOwner()" *ngIf="own.OwnerId!=0" class="btn btn-primary">
+  Update
+
+</button>
+</div>
